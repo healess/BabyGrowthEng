@@ -1,0 +1,110 @@
+//
+//  GrowthEstimateBabyController.h
+//  BABYGROWTH
+//
+//  Created by JUNG BUM SEO/SU SANG KIM on 11. 10. 23..
+//  Copyright 2011 JUNG BUM SEO/SU SANG KIM All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+@protocol GrowthEstimateBabyDelegate;
+
+
+@interface GrowthEstimateBabyController : UIViewController {
+	IBOutlet UIButton *btnGoToGrowthEstimateAdult;
+	IBOutlet UIButton *btnCancel;
+	
+	IBOutlet UISegmentedControl *segGender;
+	
+	
+	/*	IBOutlet UITextField *textField;
+	 IBOutlet UITextField *textField2;
+	 IBOutlet UITextField *textField3;
+	 IBOutlet UITextField *textField4;
+	 IBOutlet UITextField *textField5;
+	 IBOutlet UITextField *textField6;*/
+	
+	id<GrowthEstimateBabyDelegate> delegate;//값 전달 딜리게이트
+	
+	/*    NSMutableArray *arrayNo;
+	 NSMutableArray *arrayNo2;
+	 NSMutableArray *arrayNo3;
+	 NSMutableArray *arrayNo4;
+	 NSMutableArray *arrayNo5;
+	 NSMutableArray *arrayNo6;*/
+	
+	//피커뷰 반영
+
+	UIPickerView *yearValuePicker; //나이 년도 입력 피커
+	UIPickerView *monthValuePicker; //나이 달 입력 피커
+	UIPickerView *heightValuePicker;//키 입력 피커
+	
+	NSArray *genderValues;//성별 입력 피커 내 배열값
+	NSArray *yearValues;//나이 년도 입력 피커 내 배열값
+	NSArray *monthValues;//나이 달 입력 피커 내 배열값
+	NSArray *heightValues;//키 입력 피커 내 배열값
+	NSArray *heightValues2;//키 입력 피커 내 배열값
+	NSArray *heightValues3;//키 입력 피커 내 배열값
+	NSArray *heightValues4;//키 입력 피커 내 배열값
+	
+	IBOutlet UIButton *genderTypeBtn;//성별 입력 피커 호출 및 값 세팅 버튼
+	IBOutlet UIButton *yearBtn;
+	IBOutlet UIButton *monthBtn;
+	IBOutlet UIButton *heightBtn;
+	
+	//툴바사용
+	UIToolbar                       *toolbar;
+	//미국단위 추가 (2012.10)
+	IBOutlet UISegmentedControl *segHeight;
+	NSString *segHeightValue;
+	UIPickerView *heightFtValuePicker;//키(ft) 입력 피커
+	NSArray *heightFtValues;//키(ft) 입력 피커 내 배열값
+	NSArray *heightFtValues2;//키(ft) 입력 피커 내 배열값
+	NSArray *heightFtValues3;//키(ft) 입력 피커 내 배열값
+	NSArray *heightFtValues4;//키(ft) 입력 피커 내 배열값
+	NSArray *heightFtValues5;//키(ft) 입력 피커 내 배열값
+	//미국단위 추가 (2012.10)
+
+	
+
+}
+@property(nonatomic,retain) IBOutlet UIButton *btnGoToGrowthEstimateAdult;
+@property(nonatomic,retain) IBOutlet UIButton *btnCancel;
+
+-(IBAction)btnGoToGrowthEstimateAdultTouched;
+-(IBAction)btnCancelTouched;
+
+//툴바사용
+@property (nonatomic, retain) UIToolbar   *toolbar;
+
+
+@property (nonatomic,retain) IBOutlet UISegmentedControl *segGender;
+
+@property (nonatomic,assign) id<GrowthEstimateBabyDelegate> delegate;
+
+
+//피커뷰 반영 해당 버튼 클릭 시 피커 호출
+-(IBAction) segGenderSelected;
+-(IBAction) showYearValuePicker;
+-(IBAction) showMonthValuePicker;
+-(IBAction) showHeightValuePicker;
+
+-(BOOL) checkInputValueValid:(NSString*)pGender Year:(NSString*)pYear Month:(NSString*)pMonth Height:(NSString*)pHeight;
+//피커뷰 반영
+//미국단위 추가 (2012.10)
+@property (nonatomic,retain) IBOutlet UISegmentedControl *segHeight;
+-(IBAction) segHeightSelected;
+//미국단위 추가 (2012.10)
+
+@end
+
+@protocol GrowthEstimateBabyDelegate<NSObject>;
+
+@required
+
+-(void) calcualteBabyHeightPercent:(NSString*)pGender Year:(NSString*)pYear Month:(NSString*)pMonth Height:(NSString*)pHeight;
+
+
+
+
+@end
