@@ -11,3 +11,4 @@
 - if you add source in Windows you must 
 - LF will be replaced by CRLF in README.
 - git config core.autocrlf true
+- MIT License
