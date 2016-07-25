@@ -3,6 +3,7 @@
 - Developed on June 2012 for App.
 - Support by below iPhone 4S, 4, 3GS...
 - IDE is XCode 4.x
+- Comapre Data is from WHO
 
 ![Description](https://github.com/healess/BabyGrowthEng/blob/master/BabyGrowth/OLD_main.png)
 ![Description](https://github.com/healess/BabyGrowthEng/blob/master/BabyGrowth/growth_anal_output.png)
