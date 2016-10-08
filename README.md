@@ -11,7 +11,5 @@
 ![Description](https://github.com/healess/BabyGrowthEng/blob/master/BabyGrowth/growth_anal_output.png)
 
 ![Description](https://github.com/healess/BabyGrowthEng/blob/master/BabyGrowth/icon114x114.png)
-- if you add source in Windows you must 
-- LF will be replaced by CRLF in README.
-- git config core.autocrlf true
+- in 100th app rank in Korea (2012 year paid app)
 - MIT License
